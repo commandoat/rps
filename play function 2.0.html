@@ -1,0 +1,92 @@
+function playGame(player, computer)
+{
+    let result = "";
+
+    if (player == 'rock')
+    {
+        if (computer == 'rock')
+        result = 'tie';
+        else if (computer == 'scissors')
+            result = 'you win';
+            else
+            result = 'you lose';
+    }
+    else if (player == 'paper')
+        {
+            if (computer == 'rock')
+             result = 'tie';
+             else if (computer == 'scissors')
+            result = 'you win';
+            else
+            result = 'you lose';
+        }
+
+    else
+    {
+        if (computer == 'rock')
+        result = 'tie';
+        else if (computer == 'scissors')
+            result = 'you win';
+            else
+            result = 'you lose';
+    }
+
+    return result;
+}
+
+//old one below
+    switch(player = playerPlay())
+    {
+        case "rock":
+                switch(computer)
+                case "rock":
+                result = 'You tie! Both rock.';
+                break;
+
+                case "paper":
+                result = 'You lose! Paper beats rock.';
+                break;
+
+                case "scissors":
+                result = "You win! Rock beats scissors.";
+                break;
+           
+           break;
+
+        case "paper":
+        
+                switch(computer)
+                case "rock":
+                result = 'You win! Paper beats rock.';
+                break;
+
+                case "paper":
+                result = 'You tie! Paper on paper action.';
+                break;
+
+                case "scissors":
+                result = "You lose. Paper loses to scissors.";
+                break;
+        
+        break;
+
+        case "scissors":
+        
+                switch(computer)
+                case "rock":
+                result = 'You lose. Scissors loses to rock.';
+                break;
+
+                case "paper":
+                result = 'You win! Scissors beats paper.';
+                break;
+
+                case "scissors":
+                result = "You tie. Scissors to scissors.";
+                break;
+        
+        break;
+    }
+
+    return result;
+}

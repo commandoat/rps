@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<header><title>Rock Paper Scissors</title></header>
+<body>
+
+<script>
+
+
+
+function random(number) {
+  return Math.floor(Math.random() * number)
+}
+
+
+
+function computerPlay()
+{
+    let a = random(3);
+    let compChoice = "";
+
+    if (a == 1)
+    {
+        compChoice = "rock";
+    }
+    else if (a == 2)
+    {
+        compChoice = "paper";
+    }
+    else{
+        
+        compChoice = "scissors";
+    }
+
+    return compChoice;
+}
+
+function playerPlay()
+{
+    let ab;
+    let j = 0;
+    
+    //While loop to force a valid input from the user.
+    while(j == 0)
+    {
+        ab = window.prompt('Enter your selection', 'E.g. Rock, Paper, or Scissors' );
+         lowerChoice = ab.toLowerCase();
+
+        if (lowerChoice == 'rock' || lowerChoice == 'paper' || lowerChoice == 'scissors') 
+        {
+            j = 1;
+        }
+
+    }
+        
+    return lowerChoice;
+}
+
+function playGame(player, computer)
+{
+    let result = "";
+
+    if (player == 'rock')
+    {
+        if (computer == 'rock')
+        result = 'tie. Avalanche!';
+        else if (computer == 'scissors')
+            result = 'Your rock beats scissors.';
+            else
+            result = 'You lose to paper';
+    }
+    else if (player == 'paper')
+        {
+            if (computer == 'rock')
+             result = 'Your paper beats rock.';
+             else if (computer == 'scissors')
+            result = 'you lose to scissors';
+            else
+            result = 'Tie. Diplomat!';
+        }
+
+    else
+    {
+        if (computer == 'rock')
+        result = 'You lose to rock.';
+        else if (computer == 'scissors')
+            result = 'Tie, scissoring action!';
+            else
+            result = 'You beat paper.';
+    }
+
+    return result;
+}
+
+function gameFive()
+{
+    let i = 0;
+    
+    for (i = 0; i > 5; i++)
+    {
+        const playerChoice = playerPlay()
+        const computerChoice = computerPlay()
+        console.log(playGame(playerChoice, computerChoice))
+    }
+}
+
+
+//fix GameFive()
+gameFive()
+
+
+
+
+
+</script>
+
+
+</body>
+
+
+
+
+
+
+
+</html>
